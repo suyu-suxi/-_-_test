@@ -1,0 +1,56 @@
+<!--顶部图片-->
+<view class="head">
+  <image src="cloud://czyyuq668-3gx14c7f26524c39.637a-czyyuq668-3gx14c7f26524c39-1331362988/年氢人活动/年氢人介绍资料/精神食粮（背景图）.jpg" class='img'></image>
+</view>
+
+<text class="welcome_title">欢迎来到年氢人俱乐部！</text>
+
+<!--年氢人略详细介绍-->
+<view class="sub_head">  
+  <image src="cloud://czyyuq668-3gx14c7f26524c39.637a-czyyuq668-3gx14c7f26524c39-1331362988/年氢人活动/年氢人介绍资料/介绍年氢人.png" class='img01'></image>
+</view>
+
+<!--配料内容-->
+<text class="materials_title">配料五维</text>
+<view class='materials_head'>
+  <!-- 雷达图 -->
+  <image src='cloud://czyyuq668-3gx14c7f26524c39.637a-czyyuq668-3gx14c7f26524c39-1331362988/年氢人活动/年氢人介绍资料/雷达图.png' class="radar_img"></image>
+  <!-- 五大配料图 -->
+  <image src='cloud://czyyuq668-3gx14c7f26524c39.637a-czyyuq668-3gx14c7f26524c39-1331362988/年氢人活动/年氢人介绍资料/五大配料图（竖版）.png' class="materials_img"></image>
+</view>
+
+<!--成为调配师的好处内容-->
+<!--成为调配师的好处内容-->
+<text class="benefits_title">成为调配师，你将会获得：</text>
+<view class="benefits_head">
+  <swiper class="benefits_swiper" indicator-dots="false" autoplay="false">
+    <swiper-item>
+      <image src="cloud://czyyuq668-3gx14c7f26524c39.637a-czyyuq668-3gx14c7f26524c39-1331362988/年氢人活动/年氢人介绍资料/312修改/能力(新).png" class="benefits_img" mode="widthFix" />
+    </swiper-item>
+  </swiper>
+</view>
+
+<!--邀请成为调配师-->
+<view class="invite_cu1">我们是年氢人，</view>
+<view class="invite_xi1">一个致力于为年轻人提供成长与娱乐的平台，</view>
+<view class="invite_xi2">也是一个帮助有创意、有想法的年轻人实现梦想的创作空间。</view>
+<view class="invite_xi3">在这里,</view>
+<view class="invite_cu2">每一份创意都能找到知音</view>
+<view class="invite_cu3">每一位创作者都能被看见</view>
+<view class="invite_head">
+  <image src="cloud://czyyuq668-3gx14c7f26524c39.637a-czyyuq668-3gx14c7f26524c39-1331362988/年氢人活动/年氢人介绍资料/招募令001.jpg" class="invitation_img"></image>
+</view>
+
+
+<!-- 按钮2 -->
+<button class="popup-trigger-button" bindtap="showImagePopup">点击展开图片</button>
+
+<!-- 自定义弹窗 -->
+<view class="popup-container" wx:if="{{showPopup}}">
+  <view class="popup-mask"></view>
+  <view class="popup-content">
+    <image src="" mode="aspectFit" class="popup-image"></image>
+    <text>扫描上面二维码</text>
+    <button class="popup-close-button" bindtap="hideImagePopup">关闭</button>
+  </view>
+</view>

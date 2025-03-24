@@ -1,0 +1,126 @@
+/* home.wxss */
+page {
+  background-color: #fff;
+}
+
+/* 导航栏 */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* 两边对齐 */
+  align-items: center; /* 垂直居中 */
+  background-color: #000000; /* 背景色 */
+  padding: 20rpx; /* 上下左右内边距 */
+}
+
+
+/* 导航栏中的文字样式 */
+.navbar-links {
+  display: flex;
+  justify-content: space-between; /* 等距分布 */
+  flex: 1; /* 让内容撑满导航栏 */
+}
+
+.navbar-links text {
+  font-size: 28rpx; /* 字体大小 */
+  color: #fff; /* 文字颜色 */
+  text-align: center; /* 居中显示 */
+  flex: 1; /* 每个文字块占用相等空间 */
+  padding: 5rpx; /* 内边距 */
+}
+
+/* 点击时的状态 */
+.navbar-links text:active {
+  color: #FF5722; /* 点击时橙色 */
+}
+
+
+/* 瀑布流布局 */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+
+.content-left, .content-right {
+  width: 49%;
+}
+
+
+/* 卡片样式 */
+.card {
+  background-color: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+  transition: transform 0.2s;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-text {
+  padding: 20rpx;
+}
+
+.card-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.card-subtitle {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+
+
+/* 新增爱心样式 */
+.author-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.like-count {
+  transition: all 0.3s;
+}
+
+.icon-heart:active {
+  transform: scale(1.2);
+}
+
+/* 添加过渡动画 */
+.icon-heart {
+  transition: all 0.3s ease;
+  color: #ccc; /* 默认灰色 */
+  transform: scale(1);
+}
+
+.icon-heart.liked {
+  color: #ff4444; /* 点赞后红色 */
+}
+
+/* 点击效果 */
+.like-container:active .icon-heart {
+  transform: scale(1.2);
+}

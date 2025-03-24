@@ -1,0 +1,112 @@
+<!-- huati.wxml -->
+<view class="topic-container">
+  <!-- 加载状态提示 -->
+  <view wx:if="{{isLoading}}" class="loading-container">
+    <image src="/images/loading.gif" class="loading-icon" />
+    <text>正在加载...</text>
+  </view>
+
+  <!-- 话题头部：标题 -->
+  <view class="topic-header">
+    <view class="topic-title">{{topic.title}}</view>
+  </view>
+  
+  <!-- 话题内容区域 -->
+  <view class="topic-content-box">
+    <!-- 轮播图 -->
+    <view class="topic-swiper">
+      <swiper
+        class="topic-swiper"
+        indicator-dots="{{true}}" 
+        indicator-color="#fff" 
+        indicator-active-color="#fbc346" 
+        autoplay="{{true}}" 
+        interval="3000"
+        circular="{{true}}" 
+      >
+        <block wx:for="{{topic.images}}" wx:key="index">
+          <swiper-item>
+            <image class="swiper-image" src="{{item}}" mode="aspectFill"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    
+    <!-- 介绍文本区域 -->
+    <view class="topic-introduction-box">
+      <view 
+        class="topic-introduction"
+        style="max-height: {{isTextExpanded ? 'none' : '200rpx'}};"
+      >
+        探迹者是一个致力于帮助创业者和企业家找到创新灵感和商业机会的平台。我们相信，每一个伟大的商业想法都源于对未知的探索和对变革的渴望。
+        
+        在这里，我们汇聚了来自不同行业的创新思想者、资深创业者和投资专家。通过分享独特的洞察、真实的创业故事和前沿的趋势分析，我们希望点燃创业者内心的火花，为他们提供跨界思考和创新的养分。
+        
+        无论您是刚起步的创业新秀，还是已经在商业领域深耕多年的资深企业家，探迹者都将成为您不可或缺的创新伙伴。让我们一起探索未知，创造改变世界的可能。
+      </view>
+      
+      <!-- 展开/收起按钮 -->
+      <view 
+        class="expand-text" 
+        bindtap="toggleTextExpand"
+      >
+        <text>{{isTextExpanded ? '收起' : '展开'}}</text>
+        <image
+          class="expand-icon"
+          src="/miniprogram/images/luntan/v2/{{isTextExpanded ? 'up' : 'down'}}.png"
+        ></image>
+      </view>
+    </view>
+    
+    <!-- 互动区域：点赞和评论 -->
+    <view class="topic-interaction">
+      <!-- 点赞区域 -->
+      <view class="topic-like" bindtap="likeTopic">
+        <image 
+          src="/miniprogram/images/luntan/v2/like.png" 
+          class="{{topic.liked ? 'liked' : ''}}"
+        ></image>
+        <text>{{topic.likes}}</text>
+      </view>
+      
+      <!-- 评论区域 -->
+      <view class="topic-comment" bindtap="showCommentInput">
+        <image src="/miniprogram/images/luntan/v2/comment.png"></image>
+        <text>{{topic.comments.length}}条评论</text>
+      </view>
+    </view>
+
+    <!-- 评论输入框 -->
+    <view class="topic-comment-input" wx:if="{{showCommentInput}}">
+      <input
+        placeholder="发表评论..."
+        value="{{newComment}}"
+        bindinput="handleCommentInput"
+      />
+      <button bindtap="submitComment">发布</button>
+    </view>
+
+    <!-- 评论列表 -->
+    <view class="topic-comments-list">
+  <block wx:for="{{topic.comments}}" wx:key="id">
+    <view class="topic-comment-item">
+      <image class="comment-avatar" src="{{item.user.avatarUrl}}"></image>
+      <view class="comment-content">
+        <view class="commenter-name">{{item.user.nickName}}</view>
+        <view class="comment-text">{{item.content}}</view>
+        <view class="comment-footer">
+          <view class="comment-time">{{item.createdAt}}</view>
+          <!-- 只有当前用户的评论才显示删除按钮 -->
+          <view 
+            wx:if="{{currentUser && currentUser.nickName === item.user.nickName}}" 
+            class="comment-delete"
+            bindtap="deleteComment"
+            data-comment-id="{{item._id}}"
+          >删除</view>
+        </view>
+      </view>
+    </view>
+  </block>
+    </view>
+  </view>
+</view>

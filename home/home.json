@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiperBox": "/components/swiperBox/index"
+  },
+  "navigationBarTitleText": "年氢人"
+}

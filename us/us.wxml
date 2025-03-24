@@ -1,0 +1,42 @@
+<view class="container" style="background-image: url('{{images.background}}');">
+  <view class="header">
+    <image class="logo" src="{{images.logo}}" mode="widthFix" class="company-logo" />
+    <text class="title">关于我们</text>
+  </view>
+  <view class="content">
+    <!-- 企业文化 -->
+    <view class="card">
+      <text class="card-title">企业文化</text>
+      <text class="card-text">{{content.culture}}</text>
+    </view>
+    <!-- 企业价值观 -->
+    <view class="card">
+      <text class="card-title">企业价值观</text>
+      <text class="card-text">{{content.values}}</text>
+    </view>
+    <!-- 企业宣传语 -->
+    <view class="card">
+      <text class="card-title">企业宣传语</text>
+      <text class="card-text">{{content.slogan}}</text>
+    </view>
+    <!-- 公司简介 -->
+    <view class="card">
+      <text class="card-title">公司简介</text>
+      <text class="card-text">
+        星汇小程序致力于为用户提供专业、便捷的服务，秉承“追逐热爱，成就梦想”的理念，为客户创造无限可能。
+      </text>
+    </view>
+    <!-- 联系方式 -->
+    <view class="card">
+      <text class="card-title">联系我们</text>
+      <text class="card-text">
+        邮箱：18167302975@163.com
+        电话：18167302975
+      </text>
+    </view>
+  </view>
+  <!-- 底部导航 -->
+  <view class="footer">
+    <navigator open-type="switchTab" url="/pages/home/home">返回首页</navigator>
+  </view>
+</view>

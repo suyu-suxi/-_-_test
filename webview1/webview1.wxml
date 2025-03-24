@@ -1,0 +1,3 @@
+<!--pages/webview1/webview1.wxml-->
+<text>pages/webview1/webview1.wxml</text>
+<web-view1 src="{{url}}"></web-view1>

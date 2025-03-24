@@ -1,0 +1,647 @@
+page {
+  background-color: #f5f5f5; /* 添加背景色避免透明穿透 */
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/**导航栏**/
+.navigation{
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(203,203,203,0.50); 
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top:0;
+  z-index: 1000;
+}
+
+.navigation-item{
+  display: flex;
+  width: 15%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.select-tab{
+  color: #303030;
+  font-weight: 500;
+  color: #303030;
+  position: absolute;
+}
+
+.select-tab-bootom{
+  width: 60rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  box-shadow: 0px 0px 8rpx 0px #fbc346; 
+  background: #fbc346;
+  z-index: 100;
+  position: relative;
+  top: 35rpx;
+}
+
+.search-container{
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-image image{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.search{
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 70rpx;
+  background: #f1f1f1;
+  border-radius: 30rpx;
+}
+
+.search-input{
+  width: 240rpx;
+  height: 25rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #7d7d7d;
+  line-height: 35rpx;
+}
+
+/** post css 控制底部悬浮发布按钮的样式**/
+.post-container {
+  position: fixed;
+  right: 18rpx;
+  bottom: 20rpx;
+  z-index: 100;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.wall-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-container {
+  position: fixed;
+  right: 18rpx;
+  bottom: 20rpx;
+  z-index: 100;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.post-container image {
+  width: 100%;
+  height: 100%;
+}
+
+/*话题的位置*/
+
+
+.fixed-topic {
+  width: 90%;
+  background: #ffffff;
+  border-radius: 20rpx;
+  box-shadow: 0px 0px 20rpx 0px rgba(193, 193, 193, 0.71);
+  position: relative;
+  left:auto; /* 水平居中 */
+  z-index: 900; /* 确保在其他内容之上 */
+  margin: 40rpx auto; /* 确保与导航栏和帖子列表有足够的间距 */
+  padding: 10rpx;
+}
+
+.topic-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rpx;
+}
+
+.topic-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #303030;
+  text-align: center;
+  padding: 10rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.topic-content {
+  padding: 10rpx;
+}
+
+.topic-image {
+  border-radius: 52.0rpx;
+  width: 100%;
+  height: 450rpx; /* 可以根据需要调整高度 */
+  object-fit: contain; /* 确保图片按比例显示 */
+  margin-bottom: 20rpx; /* 与文字之间的间距 */
+}
+
+.topic-text {
+  font-size: 28rpx;
+  color: #303030;
+  line-height: 1.5;
+}
+
+.topic-interaction {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1px solid #f0f0f0;
+}
+
+.topic-comment, .topic-like {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.topic-comment image, .topic-like image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-bottom: 5rpx;
+}
+
+/** 表白墙 **/
+.flag-tab{
+  width: 55px;
+  height: 5px;
+  background: #fbc346;
+  box-shadow: 0px 0px 8rpx 0px rgba(247,171,30,0.81); 
+  margin-top: 10rpx;
+}
+
+/*表白墙标题的样式*/
+.body-flag{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 140rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #303030;
+  line-height: 25px;
+  margin-bottom: 20rpx;
+}
+/*帖子列表的样式*/
+.body-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rpx; /* 设置顶部间距 */
+  margin-top: 0rpx; /* 确保与导航栏有足够的间距 */
+}
+
+.body-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100rpx; /* 确保与导航栏有足够的间距 */
+}
+
+.body-item {
+  width: 92%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  background: #ffffff;
+  box-shadow: 0px 0px 20rpx 0px rgba(193, 193, 193, 0.71);
+  margin-bottom: 70rpx; /* 帖子之间的间距 */
+  height: auto; /* 高度根据内容动态调整 */
+}
+
+.item-content-word {
+  width: 100%;
+  word-wrap: break-word;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #303030;
+}
+
+.item-content-image {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+
+.item-content-image image {
+  width: 200rpx;
+  height: auto;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.item-header{
+  height: 130rpx;
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar-item{
+  width: 23%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.avatar-item .user-avatar{
+  width: 120rpx;
+  height: 120rpx;
+  border: 4rpx solid #303030;
+  border-radius: 30rpx;
+  z-index: 100;
+  position: relative;
+  top: -30rpx;
+}
+
+.avatar-border{
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  z-index: 200;
+  left: -22rpx;
+  top: -50rpx;
+}
+
+.nickname-item{
+  width: 61%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nickname-top{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 700;
+  text-align: left;
+  color: #303030;
+  line-height: 40rpx;
+}
+
+.poster-nickname{
+
+}
+
+.nickname-top image{
+  width: 90rpx;
+  height: 27rpx;
+  margin-left: 10px;
+}
+
+.nickname-bottom{
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.nickname-flag{
+  width: 90rpx;
+  height: 36rpx;
+  background: linear-gradient(159deg,#ffd73b 11%, #fbc346 94%);
+  border-radius: 18rpx;
+  box-shadow: 0px 0px 16rpx 0px rgba(247,171,30,0.50); 
+  font-size: 20rpx;
+  margin-right: 15rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-name{
+  height: 50rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  top: -5rpx;
+}
+
+.icon-item{
+  width: 16%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-item image{
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.item-content{
+  width: 92%;
+  margin-bottom: 10rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+}
+
+.item-content-image{
+  width: 100%;
+  margin-top: 15rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+}
+
+.item-content-image image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 20rpx;
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.item-footer{
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.date{
+  width: 70%;
+  font-size: 20rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #303030;
+}
+
+.letter-icon{
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #303030;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.letter-icon image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/** 评论 **/
+.comment-content{
+  width: 92%;
+  margin-bottom: 30rpx;
+}
+
+.comment-input-container{
+  position:fixed;
+  bottom: 0rpx;
+  z-index:500;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 16rpx 0px rgba(0,0,0,0.54); 
+  /* 添加下面的样式用于动画 */
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.praise-content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.praise-left{
+  width: 10%;
+}
+
+.praise-left image{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx 0rpx;
+}
+
+.praise-right{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  background: #f4f4f4;
+  padding: 20rpx 20rpx;
+}
+
+.praise-item{
+  display: flex;
+  flex-direction: row;
+  font-size: 20rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #303030;
+  align-items: center;
+  margin-bottom: 15rpx;
+  margin-right: 20rpx;
+}
+
+.praise-name{
+
+}
+
+.praise-item image{
+  width: 35rpx;
+  height: 35rpx;
+  border: 2rpx solid #303030;
+  border-radius: 12rpx;
+  margin-right: 5rpx;
+}
+
+.comment-list{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-left{
+  width: 10%;
+}
+
+.comment-left image{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx 0rpx;
+}
+
+.comment-right{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  background: #f4f4f4;
+  padding: 20rpx 20rpx;
+}
+
+.comment-item{
+  font-size: 25rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #303030;
+  display: inline;
+  margin-bottom: 10rpx;
+}
+
+.comment-name{
+  display: inline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 600;
+  color: #303030;
+}
+
+.comment-item image{
+  width: 35rpx;
+  height: 35rpx;
+  border: 2rpx solid #303030;
+  border-radius: 12rpx;
+  margin-right: 10rpx;
+  margin-bottom: -10rpx;
+}
+
+.comment-word{
+  display: inline;
+}
+
+.comment-sub{
+  margin-left: 50rpx;
+}
+
+/** 输入框 **/
+.comment-input-container{
+  position:fixed;
+  bottom: 0rpx;
+  z-index:500;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 16rpx 0px rgba(0,0,0,0.54); 
+}
+
+.comment-input-container textarea{
+  width: 80%;
+  height: 90rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  font-weight: 200;
+  padding: 20rpx 20rpx;
+  background: #f1f1f1;
+  border-radius: 40rpx;
+
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #7d7d7d;
+}
+
+.comment-input-container .send-button{
+  width: 130rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #604708;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(159deg,#ffd73b 11%, #fbc346 94%);
+  border-radius: 40rpx;
+  box-shadow: 0px 0px 12rpx 0px rgba(229,161,34,0.69); 
+}
+
+/** 消息盒子样式 **/
+.message-tip{
+  width: 250rpx;
+  height: 70rpx;
+  position: fixed;
+  z-index: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(134deg,#ffd73b 0%, #fbc346 100%);
+  border-radius: 60rpx;
+  box-shadow: 0px 0px 8rpx 2rpx rgba(247,171,30,0.81); 
+
+  left:25rpx;
+  bottom:50rpx;
+}
+
+.message-tip .tip-content{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  font-size: 25rpx;
+  font-family: OPPOSans, OPPOSans-Medium;
+  font-weight: 600;
+  color: #ff3222;
+}
+
+.tip-content image{
+  width: 50rpx;
+  height: 50rpx;
+}

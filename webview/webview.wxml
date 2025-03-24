@@ -1,0 +1,8 @@
+<!--pages/webview/webview.wxml-->
+<web-view src="{{articleUrl}}"></web-view>
+
+
+
+
+
+

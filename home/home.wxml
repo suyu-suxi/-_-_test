@@ -1,0 +1,71 @@
+<!-- 顶部海报轮播 -->
+<swiperBox
+  imgUrls="{{bannerList}}"
+  autoplay
+  showBg
+></swiperBox>
+
+  <!-- 顶部导航栏 -->
+  <view class="navbar">
+    <view class="navbar-links">
+      <text bindtap="scrollToSection" data-section="section1">多巴胺</text>
+      <text bindtap="scrollToSection" data-section="section2">内啡肽</text>
+      <text bindtap="scrollToSection" data-section="section3">血清素</text>
+      <text bindtap="scrollToSection" data-section="section4">褪黑素</text>
+      <text bindtap="scrollToSection" data-section="section5">BDNF</text>
+    </view>
+  </view>
+
+  <!-- 动态卡片区域 - 瀑布流布局 -->
+  <view class="content">
+    <view class="content-left">
+      <block wx:for="{{list}}" wx:key="index">
+        <template is="card-template" data="{{...item}}" wx:if="{{index % 2 == 0}}"></template>
+      </block>
+    </view>
+    <view class="content-right">
+      <block wx:for="{{list}}" wx:key="index">
+        <template is="card-template" data="{{...item}}" wx:if="{{index % 2 == 1}}"></template>
+      </block>
+    </view>
+  </view>
+
+<!-- 修改后的卡片模板 -->
+<template name="card-template">
+  <view 
+    class="card" 
+    id="section{{index}}"
+    bindtap="navigateToArticle" 
+    data-url="{{url}}"
+    style="margin-bottom: 20rpx; background-color: white; border-radius: 20rpx; overflow: hidden;"
+  >
+    <image 
+      src="{{image}}" 
+      class="card-image" 
+      mode="widthFix" 
+      style="width: 100%;" 
+      data-url="{{url}}"
+    />
+    <view class="card-text" style="padding: 20rpx;">
+      <text 
+        class="card-title" 
+        style="font-size: 28rpx; font-weight: bold; color: #333;"
+        data-url="{{url}}"
+      >{{title}}</text>
+      
+      <!-- 新增作者和爱心区域 -->
+      <view class="author-container">
+        <text 
+          class="card-subtitle" 
+          style="display: block; color: #666; font-size: 24rpx; margin-top: 10rpx;"
+          data-url="{{url}}"
+        >调配师: {{author}}</text>
+        
+        <view class="like-container" catchtap="handleLike" data-index="{{index}}">
+          <text class="icon-heart {{isLiked ? 'liked' : ''}}">❤</text>
+          <text class="like-count">{{num}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

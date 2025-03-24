@@ -1,0 +1,232 @@
+/* huati.wxss */
+/* 主容器 */
+.topic-container {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20rpx 5rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+}
+
+/* 话题头部 */
+.topic-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  width: 90%; /* 限制宽度，但保持居中 */
+  max-width: 750rpx; /* 最大宽度，适配不同屏幕 */
+}
+
+/* 标题样式 */
+.topic-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #303030;
+  text-align: center; /* 确保标题居中 */
+  width: 100%;
+}
+
+/* 话题内容区域 - 白色背景框 */
+.topic-content-box {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  width: 90%; /* 限制宽度 */
+  max-width: 750rpx; /* 最大宽度，适配不同屏幕 */
+}
+
+/* 轮播图样式 */
+.topic-swiper {
+  width: 100%;
+  height: 400rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+
+/* 轮播图图片样式 */
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 介绍文本区域 */
+.topic-introduction-box {
+  position: relative;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+/* 介绍文本样式 */
+.topic-introduction {
+  font-size: 30rpx;
+  color: #303030;
+  line-height: 1.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s ease-out;
+  text-align: justify;
+}
+
+/* 展开/收起按钮样式 */
+.expand-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 0;
+  color: #999;
+  font-size: 26rpx;
+  cursor: pointer;
+}
+
+/* 展开/收起图标样式 */
+.expand-icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 10rpx;
+}
+
+/* 互动区域 */
+.topic-interaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx 0 10rpx;
+}
+
+/* 点赞和评论区域样式 */
+.topic-like, .topic-comment {
+  display: flex;
+  align-items: center;
+}
+
+/* 点赞和评论图标样式 */
+.topic-like image, .topic-comment image {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 10rpx;
+}
+
+/* 点赞图标激活样式 */
+.topic-like image.liked {
+  content: url('/images/luntan/v2/liked.png');
+}
+
+/* 点赞和评论文字样式 */
+.topic-like text, .topic-comment text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 评论输入框区域 */
+.topic-comment-input {
+  display: flex;
+  padding: 15rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  width: 90%; /* 限制宽度 */
+  max-width: 750rpx; /* 最大宽度，适配不同屏幕 */
+}
+
+/* 评论输入框样式 */
+.topic-comment-input input {
+  flex: 1;
+  height: 70rpx;
+  padding: 0 15rpx;
+  font-size: 28rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+}
+
+/* 发布按钮样式 */
+.topic-comment-input button {
+  width: 120rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 15rpx;
+  background: #fbc346;
+  border: none;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: white;
+  padding: 0;
+}
+
+/* 评论列表区域 */
+.topic-comments-list {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  width: 90%; /* 限制宽度 */
+  max-width: 750rpx; /* 最大宽度，适配不同屏幕 */
+}
+
+/* 评论项样式 */
+.topic-comment-item {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 最后一项评论不显示底部边框 */
+.topic-comment-item:last-child {
+  border-bottom: none;
+}
+
+/* 评论者头像样式 */
+.comment-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+
+/* 评论内容区域 */
+.comment-content {
+  flex: 1;
+}
+
+/* 评论者名称样式 */
+.commenter-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+/* 评论文本样式 */
+.comment-text {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+  line-height: 1.5;
+}
+
+/* 评论时间样式 */
+.comment-time {
+  font-size: 22rpx;
+  color: #999;
+}
+
+/* 评论底部布局 */
+.comment-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 删除按钮样式 */
+.comment-delete {
+  color: #ff4d4f;
+  font-size: 22rpx;
+  padding: 4rpx 8rpx;
+  background-color: #fff1f0;
+  border-radius: 4rpx;
+}

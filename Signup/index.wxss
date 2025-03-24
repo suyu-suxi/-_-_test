@@ -1,0 +1,8 @@
+.full-page-image {
+  width: 100%; /* 宽度自适应父容器 */
+  height: auto; /* 高度根据图片比例自动调整 */
+  max-height: 100vh; /* 最大高度不超过视口高度 */
+  object-fit: contain; /* 确保图片完整显示，保持比例 */
+}
+
+
